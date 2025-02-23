@@ -1,18 +1,5 @@
 import { gql } from '@apollo/client';
 
-// export const GET_FEATURED_RACES = gql`
-//   query GetFeaturedRaces {
-//     featuredRaces {
-//       id
-//       name
-//       date
-//       location
-//       status
-//       imageURL
-//     }
-//   }
-// `;
-
 export const GET_LATEST_NEWS = gql`
   query GetLatestNews {
     latestNews {
@@ -62,14 +49,3 @@ export const GET_RACE = gql`
     }
   }
 `;
-
-// export const GET_BOOKMARKS = gql`
-//   query GetBookmarks {
-//     bookmarks {
-//       id
-//       name
-//       date
-//       imageURL
-//     }
-//   }
-// `;
