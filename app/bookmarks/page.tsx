@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { useAuth } from '@/store/useAuthStore';
 import BookmarkButton from '@/components/BookmarkButton';
-
+import Image from 'next/image';
 const BookmarksPage = () => {
   const { bookmarks } = useAuth();
   return (
@@ -16,10 +16,12 @@ const BookmarksPage = () => {
             key={bookmark.id} 
             className="bg-gray-800 rounded-lg overflow-hidden shadow-lg"
           >
-            <img 
+            <Image 
               src={bookmark.imageURL} 
               alt={bookmark.name} 
               className="w-full h-48 object-cover"
+              width={200}
+              height={200}
             />
             <div className='p-4 '>
               <div className='flex justify-between text-white'>

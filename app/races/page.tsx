@@ -2,7 +2,7 @@
 import { useQuery } from '@apollo/client';
 import { GET_RACES } from '@/graphql/queries';
 import Link from 'next/link';
-
+import Image from 'next/image';
 import BookmarkButton from '@/components/BookmarkButton';
 
 const RacesPage = () => {
@@ -21,10 +21,12 @@ const RacesPage = () => {
             key={races.id} 
             className="bg-gray-800 rounded-lg overflow-hidden shadow-lg"
           >
-            <img 
+            <Image 
               src={races.imageURL} 
               alt={races.name} 
               className="w-full h-48 object-cover"
+              width={200}
+              height={200}
             />
            <div className='p-4 '>
               <div className='flex justify-between text-white'>

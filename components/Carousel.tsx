@@ -7,6 +7,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 const carouselImages = [
   'https://img.freepik.com/free-vector/realistic-racing-checkered-flag-background_52683-64050.jpg',
   'https://img.freepik.com/free-vector/checkered-racing-flag-speed-background_1017-23607.jpg',
@@ -32,10 +33,12 @@ const Carousel = () => {
         >
         {carouselImages.map((image, index) => (
             <SwiperSlide key={index}>
-            <img
+            <Image
                 src={image}
                 alt={`Slide ${index}`}
                 className="w-full h-full object-cover"
+                width={200}
+                height={200}
             />
             </SwiperSlide>
         ))}

@@ -1,7 +1,7 @@
 'use client';
 import { useQuery } from '@apollo/client';
 import { GET_TOP_DRIVERS } from '@/graphql/queries';
-
+import Image from 'next/image';
 const DriversPage = () => {
   const { data, loading, error } = useQuery(GET_TOP_DRIVERS);
 
@@ -18,10 +18,12 @@ const DriversPage = () => {
             className="bg-white shadow-lg rounded-lg overflow-hidden transform transition-all hover:scale-105 hover:shadow-2xl"
           >
             <div className="flex items-center p-6">
-              <img
+              <Image
                 src={driver.imageURL}
                 alt={driver.name}
                 className="w-32 h-32 object-cover rounded-full mr-6"
+                width={32}
+                height={32}
               />
               <div>
                 <h2 className="text-2xl font-semibold text-gray-900 mb-2">{driver.name}</h2>

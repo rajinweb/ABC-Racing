@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { useQuery } from '@apollo/client';
 import {Race} from  '@/types/index';
 import {GET_RACES} from '@/graphql/queries';
-
+import Image from 'next/image';
 const RaceCard = () => {
   const { loading, error, data } = useQuery(GET_RACES);
   if (loading) return <p>Loading...</p>;
@@ -17,7 +17,7 @@ const RaceCard = () => {
               <p>{race.location}</p>
           </div>
         </Link>
-        <img src={race.imageURL} alt={`Image of ${race.name}`} />
+        <Image src={race.imageURL} alt={`Image of ${race.name}`} width={200} height={300} className='w-full'/>
       </div>
       ))
       );
