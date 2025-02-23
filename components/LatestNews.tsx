@@ -2,6 +2,7 @@
 import { useQuery } from '@apollo/client';
 import { GET_LATEST_NEWS } from '@/graphql/queries';
 import Image from 'next/image'
+import { Key } from 'react';
 const LatestNews = () => {
   const { loading, error, data } = useQuery(GET_LATEST_NEWS);
 
@@ -10,7 +11,12 @@ const LatestNews = () => {
 
   return (
   
-      data.latestNews.map((news: any) => {        
+      data.latestNews.map((news: { 
+        id: Key | null | undefined; 
+        imageURL: string ; 
+        title: string; 
+        date: string; 
+        summary: string; }) => {        
         return (
         <div key={news.id} className="bg-white rounded-lg shadow-lg overflow-hidden">
         <div className="relative">

@@ -2,6 +2,7 @@
 import { useQuery } from '@apollo/client';
 import { GET_TOP_DRIVERS } from '@/graphql/queries';
 import Image from 'next/image';
+import { Key} from 'react';
 const DriversPage = () => {
   const { data, loading, error } = useQuery(GET_TOP_DRIVERS);
 
@@ -12,7 +13,13 @@ const DriversPage = () => {
     <div className="container mx-auto px-4 py-10">
       <h1 className="text-4xl font-bold  text-white mb-12">Top Drivers</h1>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-        {data.drivers.map((driver: any) => (
+        {data.drivers.map((driver: { 
+          id: Key | null | undefined; 
+          imageURL: string; 
+          name: string ; 
+          team: string ; 
+          points: number | bigint ;
+          position: number | bigint }) => (
           <div
             key={driver.id}
             className="bg-white shadow-lg rounded-lg overflow-hidden transform transition-all hover:scale-105 hover:shadow-2xl"

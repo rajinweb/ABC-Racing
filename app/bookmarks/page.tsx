@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useAuth } from '@/store/useAuthStore';
 import BookmarkButton from '@/components/BookmarkButton';
 import Image from 'next/image';
+import { Race } from '@/types';
 const BookmarksPage = () => {
   const { bookmarks } = useAuth();
   return (
@@ -11,7 +12,7 @@ const BookmarksPage = () => {
         {Object.keys(bookmarks).length ? ( 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
          {
-         Object.values(bookmarks).map((bookmark: any) => (
+         Object.values(bookmarks).map((bookmark) => (
           <Link href={`/race/${bookmark.id}`}
             key={bookmark.id} 
             className="bg-gray-800 rounded-lg overflow-hidden shadow-lg"
@@ -26,11 +27,11 @@ const BookmarksPage = () => {
             <div className='p-4 '>
               <div className='flex justify-between text-white'>
                 <span className="text-xl font-semibold">{bookmark.name}</span>
-                <BookmarkButton data={bookmark}/>
+                <BookmarkButton data={bookmark as Race}/>
               </div>
               <div className='flex justify-between text-gray-400 mt-2'>
-                <span>{bookmark.location}</span>
-                <span>{bookmark.date}</span>
+                <span>{(bookmark as Race).location}</span>
+                <span>{(bookmark as Race).date}</span>
              </div>
             </div>
             </Link>

@@ -23,7 +23,7 @@ export default function Login() {
     const mockUser = { 
       id: '1', 
       name: formData.username,
-      email: `${formData.username}@example.com`,
+      email: `${formData.username}@abcracing.com`,
       favorites: [] 
     };
     login(mockUser);
@@ -75,7 +75,7 @@ export default function Login() {
         </form>
 
         <p className="text-sm text-center mt-4">
-          Don't have an account? 
+          Don&apos; have an account? 
           <a href="/signup" className="text-blue-500 hover:text-blue-400">
             Sign Up
           </a>

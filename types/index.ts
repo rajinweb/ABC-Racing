@@ -20,6 +20,8 @@ export interface AuthProviderProps {
   children: ReactNode;
 }
 export interface Bookmark {
+  imageURL: string ;
+  name: string;
   id: string;
 }
 export interface ExtendedAuthContextType extends AuthContextType {

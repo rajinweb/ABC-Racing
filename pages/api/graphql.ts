@@ -51,7 +51,7 @@ const resolvers = {
     races: () => {
       return fakeRaces || [];
     },
-    race: (_: any, { id }: { id: string }) => {
+    race: (_:unknown, { id }: { id: string }) => {      
       return fakeRaces.find((race) => race.id === id);
     },
     latestNews: () => {

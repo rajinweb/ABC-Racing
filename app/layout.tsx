@@ -6,7 +6,7 @@ import { AuthProvider } from "@/store/useAuthStore";
 
 export const metadata: Metadata = {
   title: "ABC Racing Company",
-  description: "ABC Racing Company's Digital Presence",
+  description: "ABC Racing Company&apos;s Digital Presence",
 };
 
 export default function RootLayout({

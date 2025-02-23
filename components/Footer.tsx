@@ -14,8 +14,7 @@ export default function Footer() {
               <span className="font-bold text-xl">ABC Racing</span>
             </Link>
             <p className="text-gray-400">
-              Experience the thrill of motorsport with ABC Racing's comprehensive digital platform.
-            </p>
+              Experience the thrill of motorsport with ABC Racing&apos;s comprehensive digital platform</p>
           </div>
 
           <div>

@@ -4,6 +4,7 @@ import { GET_RACES } from '@/graphql/queries';
 import Link from 'next/link';
 import Image from 'next/image';
 import BookmarkButton from '@/components/BookmarkButton';
+import { Race } from '@/types';
 
 const RacesPage = () => {
   const { loading, error, data } = useQuery(GET_RACES);
@@ -16,7 +17,7 @@ const RacesPage = () => {
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-6 text-white">Races</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {data?.races?.map((races: any) => (
+        {data?.races?.map((races: Race) => (
           <Link href={`/race/${races.id}`}
             key={races.id} 
             className="bg-gray-800 rounded-lg overflow-hidden shadow-lg"

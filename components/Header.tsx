@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useAuth } from '@/store/useAuthStore';
 
 export default function Header() {
-  const { isAuthenticated, user, login, logout } = useAuth();
+  const { isAuthenticated, user, logout } = useAuth();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
