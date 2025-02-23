@@ -1,7 +1,7 @@
 'use client';
 import { useQuery } from '@apollo/client';
 import { GET_LATEST_NEWS } from '@/graphql/queries';
-
+import Image from 'next/image'
 const LatestNews = () => {
   const { loading, error, data } = useQuery(GET_LATEST_NEWS);
 
@@ -14,10 +14,12 @@ const LatestNews = () => {
         return (
         <div key={news.id} className="bg-white rounded-lg shadow-lg overflow-hidden">
         <div className="relative">
-          <img
+          <Image
             src={news.imageURL} 
             alt={news.title as string}
             className="w-full h-48 object-cover"
+            width={200}
+            height={192}
           />
           <div className="absolute bottom-0 left-0 right-0 p-4 bg-black bg-opacity-50 text-white">
             <h3 className="text-lg font-semibold">{news.title as string}</h3>

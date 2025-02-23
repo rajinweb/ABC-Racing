@@ -21,7 +21,7 @@ const BookmarksPage = () => {
               alt={bookmark.name} 
               className="w-full h-48 object-cover"
               width={200}
-              height={200}
+              height={192}
             />
             <div className='p-4 '>
               <div className='flex justify-between text-white'>
