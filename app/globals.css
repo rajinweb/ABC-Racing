@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root{
+  background-color: black;
+}
+
+.swiper-button-next, .swiper-button-prev{
+  @apply z-20
+}
+.swiper-button-next:after, .swiper-button-prev:after{
+  @apply  text-red-500
+}
+.swiper-pagination-bullet-active {
+  @apply  bg-red-500 !important
+}
